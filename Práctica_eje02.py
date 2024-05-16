@@ -7,7 +7,7 @@ Cada atributo de la clase cuenta con sus respectivos get y set.
 
 class Empleado:
 
-    def __init(self, nombre, dni, telefono):
+    def __init__(self, nombre, dni, telefono):
         self._nombre = nombre
         self._dni = dni
         self._telefono = telefono
@@ -44,24 +44,24 @@ class EmpleadoDefinido(Empleado):
         #constructor de la clase empleado
         super().__init__(nombre, dni, telefono)
         #nuevos atributos
-        self._numplaza=numplaza
-        self._salariobase=salariobase
-        self._duracioncontrato=duracioncontrato
+        self._numplaza = numplaza
+        self._salariobase = salariobase
+        self._duracioncontrato = duracioncontrato
 
     def set_numplaza(self, numplaza):
-        self._numplaza=numplaza
+        self._numplaza = numplaza
 
     def get_numplaza(self):
         return self._numplaza
     
     def set_salariobase(self, salariobase):
-        self._salariobase=salariobase
+        self._salariobase = salariobase
 
     def get_salariobase(self):
         return self._salariobase
     
     def set_duracioncontrato(self, duracioncontrato):
-        self._duracioncontrato=duracioncontrato
+        self._duracioncontrato = duracioncontrato
 
     def get_duracioncontrato(self):
         return self._duracioncontrato
@@ -88,35 +88,35 @@ class EmpleadoIndefinido(Empleado):
         #constructor de la clase Empleado
         super().__init__(nombre, dni, telefono)
         #nuevos atributos
-        self._numplaza=numplaza
-        self._salariobase=salariobase
-        self._categoria=categoria
+        self._numplaza = numplaza
+        self._salariobase = salariobase
+        self._categoria = categoria
 
     def set_numplaza(self, numplaza):
-        self._numplaza=numplaza
+        self._numplaza = numplaza
 
     def get_numplaza(self):
         return self._numplaza
     
     def set_salariobase(self, salariobase):
-        self._salariobase=salariobase
+        self._salariobase = salariobase
 
     def get_salariobase(self):
         return self._salariobase
 
     def set_categoria(self, categoria):
-        self._categoria=categoria
+        self._categoria = categoria
 
     def get_categoria(self):
         return self._categoria
     
     #calculo del salario con subida en base a categoria del empleado
     def calcularsalariototal(self):
-        if self._categoria==1:
+        if self._categoria == 1:
             return self._salariobase + (self._salariobase * 0.03)
-        elif self._categoria==2:
+        elif self._categoria == 2:
             return self._salariobase + (self._salariobase * 0.05)
-        elif self._categoria==3:
+        elif self._categoria == 3:
             return self._salariobase + (self._salariobase * 0.08)
         else:
             return self._salariobase
@@ -133,10 +133,10 @@ class EmpleadoSubcontratado(Empleado):
         #nuevo atributo para la clase de empleado subcontratado
         self._empresaresponsable = empresaresponsable
     
-    def set_empresaresponsable(self, empresa):
-        self._empresaresponsable = empresa
+    def set_empresaresponsable(self, empresaresponsable):
+        self._empresaresponsable = empresaresponsable
     
-    def get_empresa(self):
+    def get_empresaresponable(self):
         return self._empresaresponsable
 
 """
@@ -150,64 +150,65 @@ de la siguiente manera:
 """
 
 #empleados subcontratados
-subcontratado1=EmpleadoSubcontratado("nombre1 ape1 ape2", 123456, 91000001, "Coca-Cola")
-subcontratado2=EmpleadoSubcontratado("nombre2 ape2 ape2", 987654, 91000002, "Pepsi")
+subcontratado1 = EmpleadoSubcontratado("nombre1 ape1 ape2", 123456, 91000001, "Coca-Cola")
+subcontratado2 = EmpleadoSubcontratado("nombre2 ape2 ape2", 987654, 91000002, "Pepsi")
 
 print("*** Empleados Subcontratados ***")
-print("/n****Empleado 1****")
-print("Nombre: "+ subcontratado1.get_nombre() +
-"\n DNI: " + str(subcontratado1.get_dni()) +
-"\nEmpresa Responsable: " + subcontratado1.get_empresaresponsable())
-print("/n****Empleado 2****")
-print("Nombre: "+ subcontratado2.get_nombre() +
-"\n DNI: " + str(subcontratado2.get_dni()) +
-"\nEmpresa Responsable: " + subcontratado2.get_empresaresponsable())
+print("\n****Empleado 1****")
+print("Nombre: " + str(subcontratado1.get_nombre()) +
+"\nDNI: " + str(subcontratado1.get_dni()) +
+"\nEmpresa Responsable: " + str(subcontratado1.get_empresaresponable()))
+print("\n****Empleado 2****")
+print("Nombre: " + str(subcontratado2.get_nombre()) +
+"\nDNI: " + str(subcontratado2.get_dni()) +
+"\nEmpresa Responsable: " + str(subcontratado2.get_empresaresponable()))
 
 #empleados por tiempo definido
-empleado1=EmpleadoDefinido("nombre3 ape3 ape3", 1000001, 913025478, 3, 25000, 6)
-empleado2=EmpleadoDefinido("nombre4 ape4 ape4", 70123456, 679001122, 4, 18000, 3)
+empleado1=EmpleadoDefinido("nombre3 ape3 ape3", 1000001, 913025478, 19, 25000, 6)
+empleado2=EmpleadoDefinido("nombre4 ape4 ape4", 70123456, 679001122, 18, 18000, 3)
 
 print("\n*** Empleados de tiempo Definido ***")
+
 print("\n****Empleado1****")
-print("Nombre: " +empleado1.get_nombre() + 
+print("Nombre: " + str(empleado1.get_nombre()) +
 "\nDNI: " + str(empleado1.get_dni()) +
-"\nNúmero de plaza: " + empleado1.get_numplaza() +
-"\nDuración de contrato: " + empleado1.get_duracioncontrato() + " meses" +
+"\nNúmero de plaza: " + str(empleado1.get_numplaza()) +
+"\nDuración de contrato: " + str(empleado1.get_duracioncontrato()) + " meses" +
 "\nSalario con subida: " + str(empleado1.calcularsalariototal()))
 
 print("\n****Empleado2****")
-print("Nombre: " +empleado2.get_nombre() + 
+print("Nombre: " + str(empleado2.get_nombre()) +
 "\nDNI: " + str(empleado2.get_dni()) +
-"\nNúmero de plaza: " + empleado2.get_numplaza() +
-"\nDuración de contrato: " + empleado2.get_duracioncontrato() + " meses" +
+"\nNúmero de plaza: " + str(empleado2.get_numplaza()) +
+"\nDuración de contrato: " + str(empleado2.get_duracioncontrato()) + " meses" +
 "\nSalario con subida: " + str(empleado2.calcularsalariototal()))
 
 #empleados por tiempo indefinido
-empleadoCat1=EmpleadoIndefinido("nombre5 ape5 ape5", 74012459, 649234587, 1, 36000, 1)
-empleadoCat2=EmpleadoIndefinido("nombre6 ape6 ape6", 12568556, 911112233, 2, 38540, 1)
-empleadoCat3=EmpleadoIndefinido("nombre7 ape7 ape7", 8000001, 741222689, 3, 41150, 1)
+empleadoCat1=EmpleadoIndefinido("nombre5 ape5 ape5", 74012459, 649234587, 21, 36000, 1)
+empleadoCat2=EmpleadoIndefinido("nombre6 ape6 ape6", 12568556, 911112233, 22, 38540, 2)
+empleadoCat3=EmpleadoIndefinido("nombre7 ape7 ape7", 8000001, 741222689, 23, 41150, 3)
 
 print("\n*** Empleados por tiempo INDEFINIDO ***")
 print("\n****Empleado 1****")
-print("Nombre: " + empleadoCat1.get_nombre() + 
+print("Nombre: " + str(empleadoCat1.get_nombre()) + 
 "\nDNI: " + str(empleadoCat1.get_dni()) +
 "\nTeléfono: " + str(empleadoCat1.get_telefono()) +
-"\nNúmero de Plaza: " + str(empleadoCat1.get_numplaza) +
-"\nCategoría: " + str(empleadoCat1.get_categoria) +
+"\nNúmero de Plaza: " + str(empleadoCat1.get_numplaza()) +
+"\nCategoría: " + str(empleadoCat1.get_categoria()) +
 "\nSalario con subida: " + str(empleadoCat1.calcularsalariototal()))
 
 print("\n****Empleado 2****")
-print("Nombre: " + empleadoCat2.get_nombre() + 
+print("Nombre: " + str(empleadoCat2.get_nombre()) + 
 "\nDNI: " + str(empleadoCat2.get_dni()) +
-"\nTeléfono: " + str(empleadoCat1.get_telefono()) +
-"\nNúmero de Plaza: " + str(empleadoCat2.get_numplaza) +
-"\nCategoría: " + str(empleadoCat2.get_categoria) +
+"\nTeléfono: " + str(empleadoCat2.get_telefono()) +
+"\nNúmero de Plaza: " + str(empleadoCat2.get_numplaza()) +
+"\nCategoría: " + str(empleadoCat2.get_categoria()) +
 "\nSalario con subida: " + str(empleadoCat2.calcularsalariototal()))
 
 print("\n****Empleado 3****")
-print("Nombre: " + empleadoCat3.get_nombre() + 
+print("Nombre: " + str(empleadoCat3.get_nombre()) + 
 "\nDNI: " + str(empleadoCat3.get_dni()) +
 "\nTeléfono: " + str(empleadoCat3.get_telefono()) +
-"\nNúmero de Plaza: " + str(empleadoCat3.get_numplaza) +
-"\nCategoría: " + str(empleadoCat3.get_categoria) +
+"\nNúmero de Plaza: " + str(empleadoCat3.get_numplaza()) +
+"\nCategoría: " + str(empleadoCat3.get_categoria()) +
 "\nSalario con subida: " + str(empleadoCat3.calcularsalariototal()))
