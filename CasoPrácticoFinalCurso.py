@@ -1,4 +1,7 @@
-#Esta clase define una tarea con el nombre y su estado de pendiente por defecto. 
+#AUTOR: Jose Miguel Redondo Romero
+#EMAIL: ironet.jmr@gmail.com
+
+#Con esta clase definimos la tarea y damos por defecto, el estado de "pendiente" cuando la creamos. 
 class Tarea:
     def __init__(self, nbtarea):            
         self.nbtarea = nbtarea      
