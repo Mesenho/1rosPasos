@@ -12,8 +12,17 @@ letra que se determina por inspección mediante la Tupla usada en este código:
 # AUTOR: Jose Miguel Redondo Romero
 # creo una tupla con el valor de la letra en el orden correcto de acuerdo con la fórmula
 miTupla = ("T","R","W","A","G","M","Y","F","P","D","X","B","N","J","Z","S","Q","V","H","L","C","K","E")
-dni = input("\nIntroduzca el número de DNI del que desea saber su letra: ")
-print("\nLa letra para el número de DNI introducido es la " + miTupla[int(dni)%23])
-print("\n✅ Obteniendo el NIF: "+dni+miTupla[int(dni)%23])
-print("\nPor cortesia de: Jose Miguel Redondo | ironet.jmr@gmail.com")
-print("\n")
+dni = "1"
+while True:
+    dni = input("\nIntroduzca el número de DNI del que desea saber su letra: (0 para salir) » ")
+    if dni == "0":
+        print("\nHasta pronto! 👋")
+        print("Por cortesia de: Jose Miguel Redondo | ironet.jmr@gmail.com")
+        print("\n")
+        break
+    elif dni != "0":
+        print("\nLa letra para el número de DNI introducido es la " + miTupla[int(dni)%23])
+        print("✅ Obteniendo el NIF: "+dni+miTupla[int(dni)%23])
+    else:
+        print("Por cortesia de: Jose Miguel Redondo | ironet.jmr@gmail.com")
+        print("\n")

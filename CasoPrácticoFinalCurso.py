@@ -7,7 +7,7 @@ class Tarea:
         self.nbtarea = nbtarea      
         self.iscompletada = False             
 
-#Esta clase es se utilizará para incorporar lo métodos/opciones de menú de las tareas 
+#Esta clase es se utilizará para incorporar los/as métodos/opciones de menú de las tareas 
 class Menu_tarea:                         
     def __init__(self):                     
         self.tareas = []                    
